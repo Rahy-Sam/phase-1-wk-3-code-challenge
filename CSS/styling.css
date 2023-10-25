@@ -1,69 +1,94 @@
-*{
-    margin:0;
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family: 'Playpen Sans', cursive;
+/* Set a background color for the body */
+body {
+    /* background-color: #f2f2f2; */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, blue, white);
 }
 
-.navbar {
-    width: 100%;
-    height: 60px;
-    background-color: black;
-}
-
-.navbar-container{
+/* Style the header with a background color and center-aligned content */
+.header {
+    background-color: #333;
+    color: #fff;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
-    height: 100%; 
-    color: white;
-    font-family: 'Quintessential', serif;
+    padding: 10px 20px;
 }
 
-
-.logo-container{
-    flex: 1;
-}
-
-.logo{
-    font-family: 'Quintessential', serif;
-    font-size: 30px;
-    color:aquamarine
-}
-
-.menu-container{
-    flex: 6;
-}
-
-.menu-list{
-    display: flex;
-    list-style: none;
-}
-
-.menu-list-item{
-    margin-right: 30px;
-
-}
-
-.menu-list-item.active{
+/* Style the logo text in the header */
+.logo {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
     font-weight: bold;
 }
 
-.profile-container{
+/* Style the navigation links in the header */
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+}
+
+/* Center the content in the container */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style the movie container */
+.movie-container {
+    display: flex;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Style the movie list section */
+.movie-list {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Style the movie details section */
+.movie-details {
     flex: 2;
+    padding: 20px;
 }
 
-.profile-picture{
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
+/* Style movie list title */
+.movie-list h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-.sidebar{
-    width: 50px;
-    height: 100%;
-    background-color: black;
-    position: fixed;
-    top: 0;
+/* Style the movie list with bullets and some spacing */
+.film-list li {
+    list-style: disc;
+    margin: 5px 0;
+}
+
+/* Style the "Buy Ticket" button */
+#buy-ticket {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover effect for the "Buy Ticket" button */
+#buy-ticket:hover {
+    background-color: #0056b3;
 }
