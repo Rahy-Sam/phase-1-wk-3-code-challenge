@@ -1,16 +1,21 @@
- // Import the fs (file system) module
-const fs = require('fs');
+// handling ticket purchases
+updateAvailableTickets();
 
-// Read the JSON data from the file
-fs.readFile('db.json', 'utf8', (err, data) => {
-    if (err) {
-        console.error(err);
-        return;
-    }
-
-    // Parse the JSON data into a JavaScript object
-    const jsonData = JSON.parse(data);
-
-    // Now you can work with the jsonData object
-    console.log(jsonData);
+buyButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        // Simulate a ticket purchase by sending a request to a server
+        fetch('/purchaseTicket', { method: 'POST' })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.success) {
+                    // Update the available tickets count and notify the user
+                    availableTickets -= 1;
+                    updateAvailableTickets();
+                    alert('Ticket purchased! Enjoy the event.');
+                } else {
+                    alert('Ticket purchase failed. Please try again.');
+                }
+            });
+    });
 });
+
