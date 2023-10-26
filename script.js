@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Fetch and display the details of the first movie when the page loads
-  fetch("http://localhost:3000/films/1")
+  fetch("https://my-json-server.typicode.com/Rahy-Sam/phase-1-wk-3-code-challenge/films/1")
     .then((response) => response.json())
     .then((data) => {
       const film = data;
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch((error) => console.error("Error:", error));
 
   // Fetch the list of movies and create menu items
-  fetch("http://localhost:3000/films")
+  fetch("https://my-json-server.typicode.com/Rahy-Sam/phase-1-wk-3-code-challenge/films")
     .then((response) => response.json())
     .then((data) => {
       data.forEach((movie) => {
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Event listener for clicking on a movie in the menu
         filmItem.addEventListener("click", () => {
-          fetch(`http://localhost:3000/films/${movie.id}`)
+          fetch(`https://my-json-server.typicode.com/Rahy-Sam/phase-1-wk-3-code-challenge/films${movie.id}`)
             .then((response) => response.json())
             .then((data) => {
               updateMovieDetails(data);
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const newTicketsSold = currentTickets - 1;
       availableTickets.textContent = newTicketsSold;
       // Send a request to the server to update the available tickets count
-      fetch(`http://localhost:3001/films/1/purchase`, {
+      fetch(`https://my-json-server.typicode.com/Rahy-Sam/phase-1-wk-3-code-challenge/films/1/purchase`, {
         method: "PATCH",
       })
         .then((response) => response.json())
